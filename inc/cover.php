@@ -22,6 +22,8 @@
               </div>
 
             <div id="range_cover">
+              <label for="input_range_cover">Price Range:</label>
+              <input type="text" id="input_range_cover">
               <label for="input_range_cover">Price range:</label>
               <input type="text" id="input_range_cover" name="rental_value" readonly style="border:0; color:#f6931f; font-weight:bold;">
               <div id="main_range_cover" class="" title="Tap left or right button to set more precise value."></div>

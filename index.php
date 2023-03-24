@@ -32,12 +32,29 @@ $(function(){
   $( "#input_range_cover" ).val( "Ksh. " + $( "#main_range_cover" ).slider( "values", 0 ) +
    " - Ksh. " + $( "#main_range_cover" ).slider( "values", 1 ) );
 
-  // Handle manual input of price range
+ // Handle manual input of price range
   $( "#input_range_cover" ).on( "change", function() {
-    var inputVal = $( this ).val().replace( /[^\d]/g, "" );
-    var lowerVal = inputVal.substr( 0, inputVal.length/2 );
-    var upperVal = inputVal.substr( inputVal.length/2 );
-    $( "#main_range_cover" ).slider( "values", [ lowerVal, upperVal ] );
-  });
+  var inputVal = $(this).val().replace( /[^\d]/g, "" );
+  var lowerVal = parseInt(inputVal.substr(0, inputVal.length / 2));
+  var upperVal = parseInt(inputVal.substr(inputVal.length / 2));
+  var sliderValues = $( "#main_range_cover" ).slider( "option", "values" );
+
+  if (lowerVal < sliderValues[0]) {
+    lowerVal = sliderValues[0];
+  } else if (lowerVal > sliderValues[1]) {
+    lowerVal = sliderValues[1];
+  }
+
+  if (upperVal > sliderValues[1]) {
+    upperVal = sliderValues[1];
+  } else if (upperVal < sliderValues[0]) {
+    upperVal = sliderValues[0];
+  }
+
+  $( "#main_range_cover" ).slider( "values", [ lowerVal, upperVal ] );
+});
+
+
+
 });
 </script>
