@@ -3,8 +3,10 @@
  ?>
 <nav class="navbar navbar-expand-sm bg-light navbar-light fixed_nav">
   <div class="main_nav container">
+      <div class="logo">
+      <a class="navbar-brand" href="#"><img src="inc/Logo.png" alt="-^-^-"></a>        
+      </div>
     <div class="left_nav  col-sm-5">
-    <a class="navbar-brand" href="#"><img src="Logo.png" alt="NYUMBANIs Logo"></a>
       <ul class="navbar-nav">
         <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="index.php#about">About</a></li>
