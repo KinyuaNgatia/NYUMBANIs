@@ -13,7 +13,7 @@
             </div>
             <div class="rent_type">
                 <select class="form-control" style="background-color:lavender;" name="house_type">
-                <option value="" selected disabled>Rent Type</option>
+                <option value="selected disabled">Rent Type</option>
                 <option value="Family">Family</option>
                 <option value="Bachelor">Bachelor</option>
                 <option value="Sublet">Sub-Let</option>

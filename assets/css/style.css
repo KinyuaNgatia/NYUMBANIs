@@ -116,8 +116,7 @@ ul{
   background-color: #e8e8e8;
   border-radius: 3px;
 }
-.contact_area{
-}
+
 footer{
   background-color: #333a56;
 }
@@ -212,12 +211,6 @@ footer p{
   font-size: 16px;
   font-weight: 600;
 }
-/* .single_house_inner{
-  background-color: aliceblue;
-  padding: 10px;
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px 0px grey;
-} */
 .right_profile_title{
   margin-bottom: 15px;
 }
@@ -488,7 +481,7 @@ footer p{
   vertical-align: super;
 }
 .navbar{
-  background-color: #cb3737 !important;
+  background-color: #e70682 !important;
 }
 .main_nav ul li a{
   color:#fff !important;
