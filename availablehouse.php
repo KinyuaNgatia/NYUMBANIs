@@ -4,8 +4,6 @@
   include_once 'Controller/Homecontroller.php';
  ?>
 
-
-
 <div class="available_page_area">
 
 <?php
@@ -32,85 +30,79 @@
 
      $data = $home->searchHome($range1,$range2,$_GET);
    }
+?>
 
-
-  ?>
-
-
-
+  
   <div class="available_page_main container">
 
-    <div class="search_house">
-      <div class="search_house_inner card">
-        <div class="well search_card card-body">
-          <form class="search_house_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <input type="text" name="address" class="form-control" value="<?php if(isset($_POST['address'])){
-              echo $_POST['address'];
-            } ?>" placeholder="Address">
-            <select class="form-control" style="background-color:lavender;" name="house_type">
-              <option value="" selected disabled>Rent Type</option>
-              <option value="Family"
-              <?php if(isset($_POST['house_type']) && $_POST['house_type']=='Family'){
-                echo "selected";
-              } ?>
-              >Family</option>
-              <option value="Bachelor"
-              <?php if(isset($_POST['house_type']) && $_POST['house_type']=='Bachelor'){
-                echo "selected";
-              } ?>
-              >Bachelor</option>
-              <option value="Sublet"
-              <?php if(isset($_POST['house_type']) && $_POST['house_type']=='Sublet'){
-                echo "selected";
-              } ?>
-              >Sub-Let</option>
-              <option value="Mess/Hostel"
-              <?php if(isset($_POST['house_type']) && $_POST['house_type']=='Mess/Hostel'){
-                echo "selected";
-              } ?>
-              >Hostel/Mess</option>
-            </select>
-            <div id="range">
-              <label for="input_range">Price range:</label>
-              <input type="text" id="input_range" name="rental_value" readonly style="border:0; color:#f6931f; font-weight:bold;">
-              <div id="main_range" class="myrange" title="Tap left or right button to set more precise value."></div>
-            </div>
+  <div class="search_house">
+    <div class="search_house_inner card">
+      <div class="well search_card card-body">
+        <form class="search_house_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+          <input type="text" name="address" class="form-control" value="<?php if(isset($_POST['address'])){
+            echo $_POST['address'];
+          } ?>" placeholder="Address">
+          <select class="form-control" style="background-color:lavender;" name="house_type">
+            <option value="" selected disabled>Rent Type</option>
+            <option value="Family"
+            <?php if(isset($_POST['house_type']) && $_POST['house_type']=='Family'){
+              echo "selected";
+            } ?>
+            >Family</option>
+            <option value="Bachelor"
+            <?php if(isset($_POST['house_type']) && $_POST['house_type']=='Bachelor'){
+              echo "selected";
+            } ?>
+            >Bachelor</option>
+            <option value="Sublet"
+            <?php if(isset($_POST['house_type']) && $_POST['house_type']=='Sublet'){
+              echo "selected";
+            } ?>
+            >Sub-Let</option>
+            <option value="Mess/Hostel"
+            <?php if(isset($_POST['house_type']) && $_POST['house_type']=='Mess/Hostel'){
+              echo "selected";
+            } ?>
+            >Hostel/Mess</option>
+          </select>
+          <div id="range">
+            <label for="input_range">Price range:</label>
+            <input type="text" id="input_range" name="rental_value" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="main_range" class="myrange" title="Tap left or right button to set more precise value."></div>
+          </div>
 
-            <input type="submit" name="search_house" class="btn btn-info" value="Search house">
-          </form>
-        </div>
+          <input type="submit" name="search_house" class="btn btn-info" value="Search house">
+        </form>
       </div>
     </div>
+  </div>
 
-    <div class="all_houses row">
+  <div class="all_houses row">
 
 <?php
-  foreach ($data as $value) {
- ?>
-      <div class="single_houses card">
-        <div class="single_house_inner card-body">
-          <div class="house_title">
-            <p style="font-weight:600;">  <i class="fas fa-map-marker-alt"></i> <?php echo $value['address']; ?> </p>
-            <p class="rent"> <i class="fas fa-money-check-alt"></i> <?php echo $value['rental_value']; ?> </p>
-          </div>
-          <div class="house_img">
-            <img src="assets/images/house/house29.png" alt="House">
-          </div>
-          <a href="housedetails.php?house_id=<?php echo $value['id']; ?>">Details</a>
+foreach ($data as $value) {
+?>
+    <div class="single_houses card">
+      <div class="single_house_inner card-body">
+        <div class="house_title">
+          <p style="font-weight:600;">  <i class="fas fa-map-marker-alt"></i> <?php echo $value['address']; ?> </p>
+          <p class="rent"> <i class="fas fa-money-check-alt"></i> <?php echo $value['rental_value']; ?> </p>
         </div>
+        <div class="house_img">
+          <img src="assets/images/house/house29.png" alt="House">
+        </div>
+        <a href="housedetails.php?house_id=<?php echo $value['id']; ?>">Details</a>
       </div>
+    </div>
 
 <?php } ?>
 
-    </div>
-
-
-
   </div>
+
+
+
 </div>
-
-
-
+</div>
 
 <?php
   include 'inc/footer.php';

@@ -43,7 +43,7 @@
       <input type="email" class="form-control" name="email" placeholder="Email">
       <input type="password" name="password" class="form-control" placeholder="Password">
       <p class="text-right clear"> <input type="submit" class="btn btn-primary loginbtn" name="login" value="Login"> </p>
-      <p class="text-center"> Not a member? <a href="user_register.php"> Sign Up ! </a></p>
+      <p class="text-center"> Not a member? <a href="user_register.php"> Sign Up now! </a></p>
     </form>
   </div>
 </div>

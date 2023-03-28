@@ -91,7 +91,7 @@
                 </div>
 
 
-        <?php } }else{ echo "You havn't any availabe/free room."; } ?>
+        <?php } }else{ echo "You have no availabe/free room."; } ?>
 
 
               </div>
